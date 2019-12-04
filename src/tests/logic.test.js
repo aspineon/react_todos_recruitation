@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import {
-    onAddTask, onColorChange, onEdit, onRemove, onOrderChange, onToggleEdit, onToggleDescription
+    onAddTask, onColorChange, onEditTask, onRemove, onOrderChange, onToggleEdit, onToggleDescription
 } from '../logic/actions'
 
 import {
@@ -20,30 +20,36 @@ class StateMock {
     }
 }
 
+window.prompt = function(){
+    return 'y'
+}
+
 describe('logic',()=>{
     it('state of tasks was been editted', () => {
         const tasks = [{title:'test', description:'desc'}]
         const mockState = new StateMock({tasks:tasks})
+        const ctxState = new StateMock({editedTask:{title:'test2', description:'desc'}})
 
         const event = {target:{ value:'test3', name:'title'}}
         const k = 0
         const el = tasks[k]
 
-        onEdit(el,k,mockState.state, mockState.setState)(event)
+        onEditTask(el,k,mockState.state, mockState.setState)(event, ctxState)
 
-        expect(mockState.state.tasks[0].title).toBe('test3')
+        expect(ctxState.state.editedTask.title).toBe('test3')
     });
 
     it('state of tasks was been removed', () => {
         const tasks = [{title:'test1', description:'desc'}, {title:'test2', description:'desc'}]
         const mockState = new StateMock({tasks:tasks})
+        const ctxState = new StateMock({editedTask:{title:'test2', description:'desc'}})
 
         const event = {target:{ value:'', name:''}}
 
         const k = 0
         const el = tasks[k]
 
-        onRemove(el, k, mockState.state, mockState.setState)(event)
+        onRemove(el, k, mockState.state, mockState.setState)(event, ctxState)
 
         expect(mockState.state.tasks.length).toBe(1)
         expect(mockState.state.tasks[0].title).toBe('test2')
@@ -53,15 +59,16 @@ describe('logic',()=>{
 
         const tasks = [{title:'test1', description:'desc'}, {title:'test2', description:'desc'}]
         const mockState = new StateMock({tasks:tasks})
+        const ctxState = new StateMock({editedTask:{title:'test2', description:'desc', bgColor:'blue'}})
 
         const event = {target:{ value:'red'}}
 
         const k = 0
         const el = tasks[k]
 
-        onColorChange(el, k, mockState.state, mockState.setState)(event)
+        onColorChange(el, k, mockState.state, mockState.setState)(event, ctxState)
 
-        expect(mockState.state.tasks[0].bgColor).toBe('red')
+        expect(ctxState.state.editedTask.bgColor).toBe('red')
     });
 
     it('new task was added', () => {
