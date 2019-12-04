@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/react_todos_recruitation/static/css/main.23378cda.chunk.css",
-    "main.js": "/react_todos_recruitation/static/js/main.d69e36ab.chunk.js",
-    "main.js.map": "/react_todos_recruitation/static/js/main.d69e36ab.chunk.js.map",
+    "main.js": "/react_todos_recruitation/static/js/main.c22ebb58.chunk.js",
+    "main.js.map": "/react_todos_recruitation/static/js/main.c22ebb58.chunk.js.map",
     "runtime-main.js": "/react_todos_recruitation/static/js/runtime-main.3068acad.js",
     "runtime-main.js.map": "/react_todos_recruitation/static/js/runtime-main.3068acad.js.map",
     "static/js/2.7dbb3547.chunk.js": "/react_todos_recruitation/static/js/2.7dbb3547.chunk.js",
     "static/js/2.7dbb3547.chunk.js.map": "/react_todos_recruitation/static/js/2.7dbb3547.chunk.js.map",
     "index.html": "/react_todos_recruitation/index.html",
-    "precache-manifest.842cfa252f90b40701352cd2dca0fc20.js": "/react_todos_recruitation/precache-manifest.842cfa252f90b40701352cd2dca0fc20.js",
+    "precache-manifest.822df266448aca1be7a4b9fcb788cacd.js": "/react_todos_recruitation/precache-manifest.822df266448aca1be7a4b9fcb788cacd.js",
     "service-worker.js": "/react_todos_recruitation/service-worker.js",
     "static/css/main.23378cda.chunk.css.map": "/react_todos_recruitation/static/css/main.23378cda.chunk.css.map"
   },
@@ -16,6 +16,6 @@
     "static/js/runtime-main.3068acad.js",
     "static/js/2.7dbb3547.chunk.js",
     "static/css/main.23378cda.chunk.css",
-    "static/js/main.d69e36ab.chunk.js"
+    "static/js/main.c22ebb58.chunk.js"
   ]
 }
